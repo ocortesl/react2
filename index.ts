@@ -1,14 +1,16 @@
 import conectarBD from "./db/db";
 import { UserModel } from './models/user'
+import {Enum_Rol} from './models/enums';
 
 const main = async () => {
     await conectarBD();
 
     await UserModel.create({
-        correo: "test@test.com",
-        identificacion: "123",
-        nombre: "Karla",
-        apellido: "Diaz"
+        apellido: "Cortes",
+        correo: "test3@test.com",
+        identificacion: 126,
+        nombre: "Tatiana",
+        rol: Enum_Rol.Lider
     })
 
     .then((u) => {
